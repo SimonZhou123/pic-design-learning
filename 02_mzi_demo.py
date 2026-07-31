@@ -14,6 +14,6 @@ for port in mzi.ports:
     print(f"  {port.name}: ({port.x:.1f}, {port.y:.1f}), 角度{port.angle:.0f}度")
 
 # 保存 GDS
-mzi.write_gds('mzi_demo.gds')
-print("\n已保存: mzi_demo.gds")
+mzi.write_gds('outputs/mzi_demo.gds')
+print("\n已保存: outputs/mzi_demo.gds")
 print("用 KLayout 打开看看吧！")

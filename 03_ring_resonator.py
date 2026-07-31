@@ -30,6 +30,6 @@ for port in ring.ports:
     print(f"  {port.name}: ({port.x:.1f}, {port.y:.1f}), 角度{port.angle:.0f}度")
 
 # 保存 GDS
-ring.write_gds('ring_resonator.gds')
-print("\n已保存: ring_resonator.gds")
+ring.write_gds('outputs/ring_resonator.gds')
+print("\n已保存: outputs/ring_resonator.gds")
 print("用 KLayout 打开看看吧！")

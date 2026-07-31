@@ -25,6 +25,8 @@
 
 ## 输出文件
 
+所有生成的版图、图片和数据统一放在 `outputs/` 目录：
+
 - `*.gds` — 版图文件（KLayout 可打开）
 - `mode_profiles.png` — 模式场分布图
 - `mzi_spectrum.png` — MZI 透射谱仿真结果

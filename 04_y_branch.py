@@ -28,6 +28,6 @@ for port in ybranch.ports:
     print(f"  {port.name}: ({port.x:.1f}, {port.y:.1f}), 角度{port.angle:.0f}度")
 
 # 保存 GDS
-ybranch.write_gds('y_branch.gds')
-print("\n已保存: y_branch.gds")
+ybranch.write_gds('outputs/y_branch.gds')
+print("\n已保存: outputs/y_branch.gds")
 print("用 KLayout 打开看看吧！")

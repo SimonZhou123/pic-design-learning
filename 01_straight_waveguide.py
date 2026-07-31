@@ -12,5 +12,5 @@ bend = c << gf.components.bend_euler(radius=5, width=0.5)
 bend.movex(10)
 
 # 保存gds
-c.write_gds('first_chip.gds')
-print('first_chip.gds 已生成！用 KLayout 打开看看吧')
+c.write_gds('outputs/first_chip.gds')
+print('outputs/first_chip.gds 已生成！用 KLayout 打开看看吧')

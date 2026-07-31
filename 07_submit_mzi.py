@@ -30,12 +30,12 @@ print("=" * 60)
 # 1. Load MZI layout
 print("\n1. Loading MZI GDS...")
 mzi = gf.components.mzi(length_x=10, length_y=2, delta_length=10)
-mzi.write_gds('mzi_demo.gds')
+mzi.write_gds('outputs/mzi_demo.gds')
 ports = {p.name: (p.x*1e-3, p.y*1e-3, p.angle) for p in mzi.ports}
 
 # 2. Import GDS
 print("\n2. Importing GDS to Tidy3D...")
-lib = gdstk.read_gds('mzi_demo.gds')
+lib = gdstk.read_gds('outputs/mzi_demo.gds')
 cell = lib.top_level()[0]
 bb = cell.bounding_box()
 cx, cy = (bb[0][0]+bb[1][0])/2, (bb[0][1]+bb[1][1])/2
@@ -104,14 +104,14 @@ ax.set_xlabel('Wavelength (nm)'); ax.set_ylabel('Transmission')
 ax.set_title(f'MZI FDTD (ER={er:.1f} dB)')
 ax.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('D:\\pic_design\\mzi_spectrum.png', dpi=150)
+plt.savefig('outputs/mzi_spectrum.png', dpi=150)
 
 fig2, ax = plt.subplots(figsize=(10, 5))
 ax.plot(wl*1000, s21, 'b-', label='FDTD', lw=2)
 ax.plot(wl*1000, np.cos(np.pi*2.4182*10/wl)**2, 'g--', label='Theory', alpha=0.7)
 ax.legend(); ax.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('D:\\pic_design\\mzi_comparison.png', dpi=150)
+plt.savefig('outputs/mzi_comparison.png', dpi=150)
 
-print("\n6. Plots saved: mzi_spectrum.png, mzi_comparison.png")
+print("\n6. Plots saved: outputs/mzi_spectrum.png, outputs/mzi_comparison.png")
 print(f"\n{'='*60} DONE {'='*60}")

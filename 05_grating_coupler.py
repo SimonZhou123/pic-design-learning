@@ -171,11 +171,11 @@ print("\n" + "=" * 60)
 print("5. 保存 GDS")
 print("=" * 60)
 
-gc_default.write_gds('grating_coupler.gds')
-print("  已保存: grating_coupler.gds（单个默认光栅耦合器）")
+gc_default.write_gds('outputs/grating_coupler.gds')
+print("  已保存: outputs/grating_coupler.gds（单个默认光栅耦合器）")
 
-chip.write_gds('grating_coupler_variants.gds')
-print("  已保存: grating_coupler_variants.gds（6个变体对比）")
+chip.write_gds('outputs/grating_coupler_variants.gds')
+print("  已保存: outputs/grating_coupler_variants.gds（6个变体对比）")
 
 print("\n✅ 完成！用 KLayout 打开看看吧！")
 print("  > 打开 grating_coupler.gds 查看单个光栅耦合器细节")

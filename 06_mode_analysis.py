@@ -100,7 +100,7 @@ for i in range(4):
 
 plt.suptitle(f'SOI 波导 (220x500nm) 模式分析 @ {WAVELENGTH}um', fontsize=14)
 plt.tight_layout()
-plt.savefig('D:\\pic_design\\mode_profiles.png', dpi=150)
+plt.savefig('outputs/mode_profiles.png', dpi=150)
 print("Saved!")
 
 print(f"\n{'='*60}")

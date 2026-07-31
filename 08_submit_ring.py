@@ -33,13 +33,13 @@ ring = gf.components.ring_single(
     radius=5, gap=0.2, length_x=10, length_y=2,
     cross_section=wg_cross_section,
 )
-ring.write_gds('ring_resonator.gds')
+ring.write_gds('outputs/ring_resonator.gds')
 ports = {p.name: (p.x*1e-3, p.y*1e-3, p.angle) for p in ring.ports}
 print(f"   Ports: o1{ports['o1'][:2]}  o2{ports['o2'][:2]}")
 
 # 2. GDS 导入 Tidy3D
 print("\n2. Importing GDS to Tidy3D...")
-lib = gdstk.read_gds('ring_resonator.gds')
+lib = gdstk.read_gds('outputs/ring_resonator.gds')
 cell = lib.top_level()[0]
 bb = cell.bounding_box()
 cx, cy = (bb[0][0]+bb[1][0])/2, (bb[0][1]+bb[1][1])/2
@@ -135,6 +135,6 @@ ax.set_xlabel('Wavelength (nm)'); ax.set_ylabel('Through transmission')
 ax.set_title(f'Ring Resonator FDTD (R=5um, gap=0.2um) — {len(peaks)} dips, FSR~{fsr:.2f}nm' if fsr else f'Ring Resonator FDTD (R=5um, gap=0.2um) — {len(peaks)} dips')
 ax.set_xlim(1500, 1600); ax.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('D:\\pic_design\\ring_spectrum.png', dpi=150)
-print("\n6. Plot saved: ring_spectrum.png")
+plt.savefig('outputs/ring_spectrum.png', dpi=150)
+print("\n6. Plot saved: outputs/ring_spectrum.png")
 print(f"\n{'='*60} DONE {'='*60}")
